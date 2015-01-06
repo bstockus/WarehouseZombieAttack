@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EEBC154-1C2F-4C0B-BE40-45FA78055D67}</ProjectGuid>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WarehouseZombieAttack</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>WarehouseZombieAttack</AssemblyName>
+    <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <PlatformTarget>x86</PlatformTarget>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>false</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PlatformTarget>x86</PlatformTarget>
+    <LinkMode>Full</LinkMode>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PlatformTarget>x86</PlatformTarget>
+    <LinkMode>Full</LinkMode>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <ConsolePause>false</ConsolePause>
+    <EnablePackageSigning>true</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="MonoMac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Collectable.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\ILocatableEntity.cs" />
+    <Compile Include="Entities\Sprites\Sprite.cs" />
+    <Compile Include="Entities\Sprites\SurvivorSprite.cs" />
+    <Compile Include="Entities\Sprites\ZombieSprite.cs" />
+    <Compile Include="Game\Game+Playing.cs" />
+    <Compile Include="Game\Game+Starting.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Helpers\AttackHelper.cs" />
+    <Compile Include="Helpers\CollisionHelper.cs" />
+    <Compile Include="Helpers\FloatMathHelper.cs" />
+    <Compile Include="Helpers\RandomHelper.cs" />
+    <Compile Include="Helpers\TextureHelper.cs" />
+    <Compile Include="HUD\HUD.cs" />
+    <Compile Include="HUD\HUDBar.cs" />
+    <Compile Include="HUD\HUDTextTimedQueue.cs" />
+    <Compile Include="Managers\Manager.cs" />
+    <Compile Include="Managers\Attack\AttackManager.cs" />
+    <Compile Include="Managers\Attack\IAttackableEntity.cs" />
+    <Compile Include="Managers\Attack\IAttackerEntity.cs" />
+    <Compile Include="Managers\Collection\CollectionManager.cs" />
+    <Compile Include="Managers\Collection\ICollectableEntity.cs" />
+    <Compile Include="Managers\Collision\CollisionManager.cs" />
+    <Compile Include="Managers\Collision\ICollidableEntity.cs" />
+    <Compile Include="Managers\Control\ControlManager.cs" />
+    <Compile Include="Managers\Control\IControllableEntity.cs" />
+    <Compile Include="Managers\Drawing\Camera.cs" />
+    <Compile Include="Managers\Drawing\DrawingManager.cs" />
+    <Compile Include="Managers\Drawing\IDrawableEntity.cs" />
+    <Compile Include="Managers\Update\IUpdateableEntity.cs" />
+    <Compile Include="Managers\Update\UpdateManager.cs" />
+    <Compile Include="Screens\GameOverScreen.cs" />
+    <Compile Include="Screens\InstructionsScreen.cs" />
+    <Compile Include="Screens\Screen.cs" />
+    <Compile Include="Screens\SetupScreen.cs" />
+    <Compile Include="Screens\SplashScreen.cs" />
+    <Compile Include="Screens\Controls\TextPickerControl.cs" />
+    <Compile Include="Specifiers\Ammunition.cs" />
+    <Compile Include="Specifiers\Location.cs" />
+    <Compile Include="Specifiers\SpriteSpecifier.cs" />
+    <Compile Include="Specifiers\TextureSheet.cs" />
+    <Compile Include="Specifiers\TimedQueue.cs" />
+    <Compile Include="Subsystems\AchievmentsSubsystem.cs" />
+    <Compile Include="Subsystems\CollectablesSubsystem.cs" />
+    <Compile Include="Subsystems\Subsystem.cs" />
+    <Compile Include="Subsystems\SurvivorSubsystem.cs" />
+    <Compile Include="Subsystems\ZombiesSubsystem.cs" />
+    <Compile Include="Game\GameControl.cs" />
+    <Compile Include="Game\GameOptions.cs" />
+    <Compile Include="Weapons\ChainsawWeapon.cs" />
+    <Compile Include="Weapons\CrowbarWeapon.cs" />
+    <Compile Include="Weapons\FistWeapon.cs" />
+    <Compile Include="Weapons\PistolWeapon.cs" />
+    <Compile Include="Weapons\ShotgunWeapon.cs" />
+    <Compile Include="Weapons\Weapon.cs" />
+    <Compile Include="Game\Results\GameCollectableResults.cs" />
+    <Compile Include="Game\Results\GameKillResults.cs" />
+    <Compile Include="Game\Results\GameResults.cs" />
+    <Compile Include="Game\Results\GameWeaponResults.cs" />
+    <Compile Include="Content\Font.cs" />
+    <Compile Include="Content\Main.cs" />
+    <Compile Include="Content\Sound.cs" />
+    <Compile Include="Content\Texture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Developer\Mono\MonoGame-master\MonoGame.Framework\MonoGame.Framework.MacOS.csproj">
+      <Project>{36C538E6-C32A-4A8D-A39C-566173D7118E}</Project>
+      <Name>MonoGame.Framework.MacOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Game\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="HUD\" />
+    <Folder Include="Managers\" />
+    <Folder Include="Screens\" />
+    <Folder Include="Specifiers\" />
+    <Folder Include="Subsystems\" />
+    <Folder Include="Content\" />
+    <Folder Include="Content\Fonts\" />
+    <Folder Include="Game\Results\" />
+    <Folder Include="Content\Videos\" />
+    <Folder Include="Content\Sounds\" />
+    <Folder Include="Content\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\BoldMessageQueueSpriteFont.xnb" />
+    <Content Include="Content\Fonts\DebugSpriteFont.xnb" />
+    <Content Include="Content\Fonts\HUDBarSpriteFont.xnb" />
+    <Content Include="Content\Fonts\HUDLabelSpriteFont.xnb" />
+    <Content Include="Content\Fonts\LargeLEDSpriteFont.xnb" />
+    <Content Include="Content\Fonts\LargeSpriteFont.xnb" />
+    <Content Include="Content\Fonts\MediumLEDSpriteFont.xnb" />
+    <Content Include="Content\Fonts\MessageQueueSpriteFont.xnb" />
+    <Content Include="Content\Fonts\TextPickerControlSpriteFont.xnb" />
+    <Content Include="Content\Fonts\VeryLargeSpriteFont.xnb" />
+    <Content Include="Content\Sounds\Weapons\Chainsaw\chainsaw.mp3" />
+    <Content Include="Content\Sounds\Weapons\Crowbar\crowbarHit.wav" />
+    <Content Include="Content\Sounds\Weapons\Fist\fistPunch.wav" />
+    <Content Include="Content\Sounds\Weapons\Pistol\pistolEmpty.wav" />
+    <Content Include="Content\Sounds\Weapons\Pistol\pistolReload.wav" />
+    <Content Include="Content\Sounds\Weapons\Pistol\pistolShot.wav" />
+    <Content Include="Content\Sounds\Weapons\Shotgun\shotgunBlast.wav" />
+    <Content Include="Content\Sounds\Weapons\Shotgun\shotgunEmpty.wav" />
+    <Content Include="Content\Sounds\Weapons\Shotgun\shotgunReload.mp3" />
+    <Content Include="Content\Sounds\ZombieSprite\zombieDeath.wav" />
+    <Content Include="Content\Images\Collectables\energyCollectable.png" />
+    <Content Include="Content\Images\Collectables\gasolineCollectable.png" />
+    <Content Include="Content\Images\Collectables\healthCollectable.png" />
+    <Content Include="Content\Images\Collectables\pistolAmmoCollectable.png" />
+    <Content Include="Content\Images\Collectables\shotgunAmmoCollectable.png" />
+    <Content Include="Content\Images\GUI\Chevron.png" />
+    <Content Include="Content\Images\GUI\GameOverScreen.png" />
+    <Content Include="Content\Images\GUI\InstructionsScreen.png" />
+    <Content Include="Content\Images\GUI\SetupScreen.png" />
+    <Content Include="Content\Images\GUI\SplashScreen.png" />
+    <Content Include="Content\Images\HUD\BarBackground.png" />
+    <Content Include="Content\Images\HUD\BarBar.png" />
+    <Content Include="Content\Images\HUD\HUDTopBar.png" />
+    <Content Include="Content\Images\HUD\Pixel.png" />
+    <Content Include="Content\Images\Other\cartoonXboxPadIcons.jpg" />
+    <Content Include="Content\Images\SurvivorSprite\survivor.png" />
+    <Content Include="Content\Images\SurvivorSprite\survivorAttack.png" />
+    <Content Include="Content\Images\SurvivorSprite\survivorCollision.png" />
+    <Content Include="Content\Images\SurvivorSprite\survivorDefense.png" />
+    <Content Include="Content\Images\Weapons\PistolAttack.png" />
+    <Content Include="Content\Images\Weapons\ShotgunAttack.png" />
+    <Content Include="Content\Images\Weapons\SmallWeaponIcons.png" />
+    <Content Include="Content\Images\Weapons\WeaponIcons.png" />
+    <Content Include="Content\Images\ZombieSprite\zombies.png" />
+    <Content Include="Content\Images\ZombieSprite\zombiesAttack.png" />
+    <Content Include="Content\Images\ZombieSprite\zombiesCollision.png" />
+    <Content Include="Content\Images\ZombieSprite\zombiesDefense.png" />
+    <Content Include="Content\Fonts.xml" />
+    <Content Include="Content\Sounds.xml" />
+  </ItemGroup>
+</Project>

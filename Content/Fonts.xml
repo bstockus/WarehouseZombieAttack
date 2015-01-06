@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFont xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Font>
+    <Name>BoldMessageQueueSpriteFont</Name>
+    <Path>Fonts/BoldMessageQueueSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>DebugSpriteFont</Name>
+    <Path>Fonts/DebugSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>HUDBarSpriteFont</Name>
+    <Path>Fonts/HUDBarSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>HUDLabelSpriteFont</Name>
+    <Path>Fonts/HUDLabelSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>LargeLEDSpriteFont</Name>
+    <Path>Fonts/LargeLEDSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>LargeSpriteFont</Name>
+    <Path>Fonts/LargeSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>MediumLEDSpriteFont</Name>
+    <Path>Fonts/MediumLEDSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>MessageQueueSpriteFont</Name>
+    <Path>Fonts/MessageQueueSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>TextPickerControlSpriteFont</Name>
+    <Path>Fonts/TextPickerControlSpriteFont</Path>
+  </Font>
+  <Font>
+    <Name>VeryLargeSpriteFont</Name>
+    <Path>Fonts/VeryLargeSpriteFont</Path>
+  </Font>
+</ArrayOfFont>
